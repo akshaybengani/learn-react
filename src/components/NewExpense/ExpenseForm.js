@@ -13,27 +13,33 @@ const ExpenseForm = () => {
 
     const titleChangeHandler = (event) => {
         setUserInput(
-            {
-                ...userInput,
-                enteredTitle: event.taget.value,
+            (prevState) => {
+                return {
+                    ...prevState,
+                    enteredTitle: event.taget.value,
+                }
             }
         );
     };
 
     const amountChangeHandler = (event) => {
         setUserInput(
-            {
-                ...userInput,
-                enteredAmount: event.taget.value,
+            (prevState) => {
+                return {
+                    ...prevState,
+                    enteredAmount: event.taget.value,
+                }
             }
         );
     }
 
     const dateChangeHandler = (event) => {
         setUserInput(
-            {
-                ...userInput,
-                enteredDate: event.taget.value,
+            (prevState) => {
+                return {
+                    ...prevState,
+                    enteredDate: event.taget.value,
+                }
             }
         );
     }
