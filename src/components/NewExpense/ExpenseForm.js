@@ -1,8 +1,7 @@
 import './ExpenseForm.css';
 import { useState } from 'react';
 
-const ExpenseForm = () => {
-
+const ExpenseForm = (props) => {
 
     const [userInput, setUserInput] = useState(
         {
@@ -52,7 +51,9 @@ const ExpenseForm = () => {
             amount: userInput.enteredAmount,
             date: new Date(userInput.enteredDate),
         };
-        console.log(expenseData);
+
+        props.onSaveExpenseData(expenseData);
+
         // In order to clear the data in the fields.
 
         setUserInput((prevState) => {
@@ -61,7 +62,9 @@ const ExpenseForm = () => {
                 enteredAmount: '',
                 enteredDate: '',
             }
-        });
+        }); 
+
+
     };
 
     return (
